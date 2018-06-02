@@ -68,7 +68,7 @@ text
 @multimedia
 @networkmanager-submodules
 @printing
-@xfce-desktop
+@cinnamon-desktop
 @development-tools
 vim
 NetworkManager-openvpn-gnome
