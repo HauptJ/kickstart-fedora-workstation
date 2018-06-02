@@ -27,13 +27,13 @@ clearpart --all --drives=sda
 firewall --enabled --ssh
 
 # Configure Network Interfaces
-network --onboot=yes --bootproto=dhcp --hostname=sina-laptop
+network --onboot=yes --bootproto=dhcp --hostname=dragon-hydra
 
 # Configure Keyboard Layouts
 keyboard us
 
 # Configure Language During Installation
-lang en_AU
+lang en_US
 
 # Configure X Window System
 xconfig --startxonboot
@@ -45,7 +45,7 @@ timezone Australia/Sydney
 auth --passalgo=sha512
 
 # Create User Account
-user --name=sina --password=$userpass --iscrypted --groups=wheel
+user --name=josh --password=$userpass --iscrypted --groups=wheel
 
 # Set Root Password
 rootpw --lock
@@ -143,23 +143,16 @@ echo "filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set nohlsearch" > /home/sina/.vimrc
+set nohlsearch" > /home/josh/.vimrc
 
-cat <<EOF > /home/sina/.bashrc
+cat <<EOF > /home/josh/.bashrc
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 source /usr/bin/virtualenvwrapper.sh
-export GOPATH=/home/sina/Development/go
-export PATH=$PATH:/home/sina/Development/go/bin
+export GOPATH=/home/josh/Development/go
+export PATH=$PATH:/home/josh/Development/go/bin
 alias irssi='firejail irssi'
-EOF
-
-# Disable IPv6
-cat <<EOF >> /etc/sysctl.conf
-net.ipv6.conf.all.disable_ipv6 = 1
-net.ipv6.conf.default.disable_ipv6 = 1
-net.ipv6.conf.lo.disable_ipv6 = 1
 EOF
 
 # Enable services
