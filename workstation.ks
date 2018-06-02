@@ -119,6 +119,7 @@ transmission-gtk
 libffi-devel
 evince
 sqlite
+ansible
 %end
 
 # Post-installation Script
